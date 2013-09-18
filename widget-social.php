@@ -195,7 +195,7 @@ class SocialProfilesWidgetPlus_Widget extends WP_Widget {
 		$instance = $old_instance;
 
 		$instance['social-id'] = $new_instance['social-id'];
-		$instance['title'] = $new_instance['title'];
+		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['description'] = $new_instance['description'];
 		$instance['version'] = $new_instance['version'];
 
@@ -391,7 +391,7 @@ class SocialProfilesWidgetPlus_Widget extends WP_Widget {
 		<input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" value="<?php echo $instance_social_title; ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" class="widefat" style="width:100%;">
 
 		<label for="<?php echo $this->get_field_id( 'description' ); ?>" class="spwp-social-description"><?php echo __('Description:', 'spwp') ?></label>
-		<input type="text" id="<?php echo $this->get_field_id( 'description' ); ?>" value="<?php echo $instance_social_description; ?>" name="<?php echo $this->get_field_name( 'description' ); ?>" class="widefat" style="width:100%;">
+		<input type="text" id="<?php echo $this->get_field_id( 'description' ); ?>" value="<?php echo htmlentities($instance_social_description); ?>" name="<?php echo $this->get_field_name( 'description' ); ?>" class="widefat" style="width:100%;">
 
 		<label for="<?php echo $this->get_field_id( 'version' ); ?>" class="spwp-social-version"><?php echo __('Version:', 'spwp') ?></label>
 		<select autocomplete="off" id="<?php echo $this->get_field_id( 'version' ); ?>" class="widefat social-change-style" name="<?php echo $this->get_field_name( 'version' ); ?>">
