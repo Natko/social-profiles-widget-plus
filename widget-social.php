@@ -23,9 +23,9 @@ class SocialProfilesWidgetPlus{
 			wp_enqueue_script( 'jquery-ui-sortable' );
 
 			wp_register_script( 'spwp-social-widget', plugins_url( '/script/widget-social.js', __FILE__ ) ); 
-	        wp_enqueue_script( 'spwp-social-widget' );
+			wp_enqueue_script( 'spwp-social-widget' );
 
-	        wp_localize_script( 'spwp-social-widget', 'socialwidget', array( 
+			wp_localize_script( 'spwp-social-widget', 'socialwidget', array( 
 				'profilelink' => __('Profile link...', 'spwp'),
 				'emailaddress' => __('Email address or contact page link...', 'spwp'),
 				'skypemessage' => __('Skype username...', 'spwp'),
