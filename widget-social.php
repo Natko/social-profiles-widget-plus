@@ -1,7 +1,7 @@
 <?php 
 
 /*
-Plugin Name: Social Profile Widget Plus
+Plugin Name: Social Profiles Widget Plus
 Plugin URI: http://natko.com
 Description: Display links to your social profiles.
 Author: Natko Hasić
@@ -9,10 +9,10 @@ Author URI: http://natko.com
 Version: 1.0
 */
 
-class SocialProfileWidgetPlus{
+class SocialProfilesWidgetPlus{
 
 	function __construct() {
-		add_action( 'widgets_init', create_function('', 'register_widget("SocialProfileWidgetPlus_Widget");'));
+		add_action( 'widgets_init', create_function('', 'register_widget("SocialProfilesWidgetPlus_Widget");'));
 		add_action( 'admin_enqueue_scripts', array( $this, 'spwp_social_widget_scripts' ), 999 );
 	}
 
@@ -36,13 +36,13 @@ class SocialProfileWidgetPlus{
 
 }
 
-new SocialProfileWidgetPlus();
+new SocialProfilesWidgetPlus();
 
 ///////////////////////////////////////////////////////////////////////////////////////
 // Widget
 ///////////////////////////////////////////////////////////////////////////////////////
 
-class SocialProfileWidgetPlus_Widget extends WP_Widget {
+class SocialProfilesWidgetPlus_Widget extends WP_Widget {
 
 	public $icons_list;
 
@@ -89,7 +89,7 @@ class SocialProfileWidgetPlus_Widget extends WP_Widget {
 			'zerply' => 'Zerply',
 		);
 
-		parent::WP_Widget( 'spwp_social_widget', 'Social Icons', array( 'classname' => 'widget-social-icons', 'description' => __('All of your social profiles on one place.', 'spwp') ), array( 'width' => 300, 'height' => 350) );
+		parent::WP_Widget( 'spwp_social_widget', 'Social Profiles', array( 'classname' => 'widget-social-icons', 'description' => __('All of your social profiles in one place.', 'spwp') ), array( 'width' => 300, 'height' => 350) );
 	}
 	
 	function widget( $args, $instance ) {
