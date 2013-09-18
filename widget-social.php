@@ -33,7 +33,6 @@ class SocialProfilesWidgetPlus{
 			);
 		}
 	}
-
 }
 
 new SocialProfilesWidgetPlus();
@@ -90,6 +89,20 @@ class SocialProfilesWidgetPlus_Widget extends WP_Widget {
 		);
 
 		parent::WP_Widget( 'spwp_social_widget', 'Social Profiles', array( 'classname' => 'widget-social-icons', 'description' => __('All of your social profiles in one place.', 'spwp') ), array( 'width' => 300, 'height' => 350) );
+	
+		if ( is_active_widget(false, false, $this->id_base) ){
+			add_action( 'wp_head', array( $this, 'spwp_social_widget_style') );
+		}
+
+	}
+
+	public function spwp_social_widget_style(){
+		echo "\n\n\t\t<!-- Social Profiles Widget Plus - http://natko.com/plugins/social-profiles-widget-plus -->
+		<style type=\"text/css\">
+			.spwp-social-icons-wrapper { overflow: hidden; margin: 0 0 -10px 0; }
+			.spwp-social-icons-wrapper a{ float: left; margin: 0 10px 10px 0; }
+		</style>
+		<!-- / Social Profiles Widget Plus -->\n\n";
 	}
 	
 	function widget( $args, $instance ) {
@@ -111,7 +124,7 @@ class SocialProfilesWidgetPlus_Widget extends WP_Widget {
 		if($version == 'flat'){ 
 			$version_path = 'flat/'; 
 		} else { 
-			$version_path = '';
+			$version_path = 'regular/';
 		}
 
 		echo $before_widget;
@@ -150,15 +163,15 @@ class SocialProfilesWidgetPlus_Widget extends WP_Widget {
 
 				if($id != 'empty' && $id != 'email' && $id != 'skype' || ($id == 'email' && strpos($instance_social_url[$i], '@') === false )){ ?>
 
-					<a href="<?php echo $instance_social_url[$i]; ?>" class="<?php echo $id; ?>"><img src="<?php echo $template_dir; ?>/theme-options/social/<?php echo $version_path; echo $id; ?>.png" alt="<?php echo $id; ?>"></a>
+					<a href="<?php echo $instance_social_url[$i]; ?>" class="<?php echo $id; ?>"><img src="<?php echo plugins_url( 'images/' , __FILE__ ); echo $version_path; echo $id; ?>.png" alt="<?php echo $id; ?>"></a>
 
 				<?php } else if ($id == 'email' && strpos($instance_social_url[$i],'@') != false) { ?>
 
-					<a href="mailto:<?php echo $instance_social_url[$i]; ?>" class="<?php echo $id; ?>"><img src="<?php echo $template_dir; ?>/theme-options/social/<?php echo $version_path; echo $id; ?>.png" alt="<?php echo $id; ?>"></a>
+					<a href="mailto:<?php echo $instance_social_url[$i]; ?>" class="<?php echo $id; ?>"><img src="<?php echo plugins_url( 'images/' , __FILE__ ); echo $version_path; echo $id; ?>.png" alt="<?php echo $id; ?>"></a>
 
 				<?php } else if ($id == 'skype') { ?>
 
-					<a href="skype:<?php echo $instance_social_url[$i]; ?>" class="<?php echo $id; ?>"><img src="<?php echo $template_dir; ?>/theme-options/social/<?php echo $version_path; echo $id; ?>.png" alt="<?php echo $id; ?>"></a>
+					<a href="skype:<?php echo $instance_social_url[$i]; ?>" class="<?php echo $id; ?>"><img src="<?php echo plugins_url( 'images/' , __FILE__ ); echo $version_path; echo $id; ?>.png" alt="<?php echo $id; ?>"></a>
 
 				<?php }
 				
