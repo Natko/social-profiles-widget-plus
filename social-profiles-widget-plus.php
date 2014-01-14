@@ -73,6 +73,7 @@ class SocialProfilesWidgetPlus_Widget extends WP_Widget {
 			'github' => 'GitHub',
 			'googleplus' => 'Google+',
 			'grooveshark' => 'Grooveshark',
+			'imdb' => 'IMDB',
 			'instagram' => 'Instagram',
 			'lastfm' => 'LastFM',
 			'linkedin' => 'LinkedIn',
