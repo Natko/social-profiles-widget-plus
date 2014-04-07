@@ -116,22 +116,30 @@ class SocialProfilesWidgetPlus_Widget extends WP_Widget {
 		extract( $args );
 		$template_dir = get_template_directory_uri();
 
-		$instance_social_id = '';
-		$instance_social_url = '';
 		$title = '';
 		$description = '';
 		$version = 'regular';
+		$new_window = false;
+		$instance_social_id = '';
+		$instance_social_url = '';
 
-		if(isset($instance['social-id'])){ $instance_social_id = $instance['social-id']; }
-		if(isset($instance['social-url'])){ $instance_social_url = $instance['social-url']; }
 		if(isset($instance['title'])){ $title = strip_tags($instance['title']); }
 		if(isset($instance['description'])){ $description = $instance['description']; }
 		if(isset($instance['version'])){ $version = $instance['version']; }
+		if(isset($instance['new-window'])){ $new_window = $instance['new-window']; }
+		if(isset($instance['social-id'])){ $instance_social_id = $instance['social-id']; }
+		if(isset($instance['social-url'])){ $instance_social_url = $instance['social-url']; }
 
 		if($version == 'flat'){ 
 			$version_path = 'flat/'; 
 		} else { 
 			$version_path = 'regular/';
+		}
+
+		if($new_window == false){
+			$new_window_html = '';
+		} else {
+			$new_window_html = ' target="_blank"';
 		}
 
 		echo $before_widget;
@@ -170,7 +178,7 @@ class SocialProfilesWidgetPlus_Widget extends WP_Widget {
 
 				if($id != 'empty' && $id != 'email' && $id != 'skype' || ($id == 'email' && strpos($instance_social_url[$i], '@') === false )){ ?>
 
-					<a href="<?php echo $instance_social_url[$i]; ?>" class="<?php echo $id; ?>"><img src="<?php echo plugins_url( 'images/' , __FILE__ ); echo $version_path; echo $id; ?>.png" alt="<?php echo $id; ?>"></a>
+					<a href="<?php echo $instance_social_url[$i]; ?>"<?php echo $new_window_html; ?> class="<?php echo $id; ?>"><img src="<?php echo plugins_url( 'images/' , __FILE__ ); echo $version_path; echo $id; ?>.png" alt="<?php echo $id; ?>"></a>
 
 				<?php } else if ($id == 'email' && strpos($instance_social_url[$i],'@') != false) { ?>
 
@@ -201,10 +209,11 @@ class SocialProfilesWidgetPlus_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
-		$instance['social-id'] = $new_instance['social-id'];
 		$instance['title'] = strip_tags($new_instance['title']);
 		$instance['description'] = $new_instance['description'];
 		$instance['version'] = $new_instance['version'];
+		$instance['new-window'] = $new_instance['new-window'];
+		$instance['social-id'] = $new_instance['social-id'];
 
 		$social_url_check = $new_instance['social-url'];
 
@@ -259,31 +268,19 @@ class SocialProfilesWidgetPlus_Widget extends WP_Widget {
 		// Set up some default widget settings
 		$instance = wp_parse_args( (array) $instance );
 
-		$instance_social_id = '';
-		$instance_social_url = '';
 		$instance_social_title = '';
 		$instance_social_description = '';
 		$instance_social_version = 'regular';
+		$instance_new_window = '';
+		$instance_social_id = '';
+		$instance_social_url = '';
 
-		if(isset($instance['social-id'])){
-			$instance_social_id = $instance['social-id'];
-		}
-
-		if(isset($instance['social-url'])){
-			$instance_social_url = $instance['social-url'];
-		}
-
-		if(isset($instance['title'])){
-			$instance_social_title = strip_tags($instance['title']);
-		}
-
-		if(isset($instance['description'])){
-			$instance_social_description = $instance['description'];
-		}
-
-		if(isset($instance['version'])){
-			$instance_social_version = $instance['version'];
-		}
+		if(isset($instance['title'])){ $instance_social_title = strip_tags($instance['title']); }
+		if(isset($instance['description'])){ $instance_social_description = $instance['description']; }
+		if(isset($instance['version'])){ $instance_social_version = $instance['version']; }
+		if(isset($instance['new-window'])){ $instance_new_window = $instance['new-window']; }
+		if(isset($instance['social-id'])){ $instance_social_id = $instance['social-id']; }
+		if(isset($instance['social-url'])){ $instance_social_url = $instance['social-url']; }
 
 		?>
 
@@ -405,6 +402,11 @@ class SocialProfilesWidgetPlus_Widget extends WP_Widget {
 			<option value="regular" <?php if($instance_social_version == 'regular'){ echo 'selected="selected"'; } ?>><?php echo __('Regular Icons', 'social-profiles-widget-plus'); ?></option>
 			<option value="flat" <?php if($instance_social_version == 'flat'){ echo 'selected="selected"'; } ?>><?php echo __('Flat Icons', 'social-profiles-widget-plus'); ?></option>
 		</select>
+
+		<p>
+			<input id="<?php echo $this->get_field_id( 'new-window' ); ?>" type="checkbox" name="<?php echo $this->get_field_name( 'new-window' ); ?>" <?php if ($instance_new_window == 'on'){ echo 'checked="checked"';} ?>>
+			<label for="<?php echo $this->get_field_id( 'new-window' ); ?>">Open in new window/tab</label>
+		</p>
 
 		<div class="spwp-social-single dummy">
 			<span class="spwp-social-icon-preview empty"></span>
