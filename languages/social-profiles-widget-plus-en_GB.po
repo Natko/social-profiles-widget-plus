@@ -1,66 +1,71 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Social Profiles Plus\n"
-"POT-Creation-Date: 2013-12-08 17:22+0100\n"
-"PO-Revision-Date: 2013-12-08 17:22+0100\n"
+"POT-Creation-Date: 2014-04-07 20:01+0100\n"
+"PO-Revision-Date: 2014-04-07 20:01+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\handbook\\wp-content\\plugins"
 "\\social-profiles-widget-plus\n"
 
 #: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:35
-#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:416
-#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:439
-#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:460
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:419
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:442
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:463
 msgid "Profile link..."
 msgstr ""
 
 #: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:36
-#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:441
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:444
 msgid "Email address or contact page link..."
 msgstr ""
 
 #: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:37
-#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:443
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:446
 msgid "Skype username..."
 msgstr ""
 
-#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:97
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:98
 msgid "All of your social profiles in one place."
 msgstr ""
 
-#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:396
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:394
 msgid "Title:"
 msgstr ""
 
-#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:399
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:397
 msgid "Description:"
 msgstr ""
 
-#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:402
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:400
 msgid "Version:"
 msgstr ""
 
-#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:404
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:402
 msgid "Regular Icons"
 msgstr ""
 
-#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:405
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:403
 msgid "Flat Icons"
 msgstr ""
 
-#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:411
-#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:429
-#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:455
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:408
+msgid "Open in new window/tab"
+msgstr ""
+
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:414
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:432
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:458
 msgid "&lt;select icon&gt;"
 msgstr ""
 
-#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:468
+#: D:\xampp\htdocs\handbook\wp-content\plugins\social-profiles-widget-plus/social-profiles-widget-plus.php:471
 msgid "Add another"
 msgstr ""

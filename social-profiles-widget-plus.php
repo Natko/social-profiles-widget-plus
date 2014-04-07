@@ -397,7 +397,7 @@ class SocialProfilesWidgetPlus_Widget extends WP_Widget {
 		<label for="<?php echo $this->get_field_id( 'description' ); ?>" class="spwp-social-description"><?php echo __('Description:', 'social-profiles-widget-plus') ?></label>
 		<input type="text" id="<?php echo $this->get_field_id( 'description' ); ?>" value="<?php echo htmlentities($instance_social_description); ?>" name="<?php echo $this->get_field_name( 'description' ); ?>" class="widefat" style="width:100%;">
 
-		<label for="<?php echo $this->get_field_id( 'version' ); ?>" class="spwp-social-version"><?php echo __('Version:', 'social-profiles-widget-plus') ?></label>
+		<label for="<?php echo $this->get_field_id( 'version' ); ?>" class="spwp-social-version"><?php echo __('Version:', 'social-profiles-widget-plus'); ?></label>
 		<select autocomplete="off" id="<?php echo $this->get_field_id( 'version' ); ?>" class="widefat social-change-style" name="<?php echo $this->get_field_name( 'version' ); ?>">
 			<option value="regular" <?php if($instance_social_version == 'regular'){ echo 'selected="selected"'; } ?>><?php echo __('Regular Icons', 'social-profiles-widget-plus'); ?></option>
 			<option value="flat" <?php if($instance_social_version == 'flat'){ echo 'selected="selected"'; } ?>><?php echo __('Flat Icons', 'social-profiles-widget-plus'); ?></option>
@@ -405,7 +405,7 @@ class SocialProfilesWidgetPlus_Widget extends WP_Widget {
 
 		<p>
 			<input id="<?php echo $this->get_field_id( 'new-window' ); ?>" type="checkbox" name="<?php echo $this->get_field_name( 'new-window' ); ?>" <?php if ($instance_new_window == 'on'){ echo 'checked="checked"';} ?>>
-			<label for="<?php echo $this->get_field_id( 'new-window' ); ?>">Open in new window/tab</label>
+			<label for="<?php echo $this->get_field_id( 'new-window' ); ?>"><?php echo __('Open in new window/tab', 'social-profiles-widget-plus'); ?></label>
 		</p>
 
 		<div class="spwp-social-single dummy">
