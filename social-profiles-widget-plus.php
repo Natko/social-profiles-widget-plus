@@ -355,6 +355,10 @@ class SocialProfilesWidgetPlus_Widget extends WP_Widget {
 				outline: none;
 			}
 
+			.spwp-social-single:only-child a.spwp-social-remove{
+				display: none;
+			}
+
 			.spwp-social-remove:focus{
 				outline: none;
 			}
